@@ -1,0 +1,20 @@
+# 이온화경향에 따라 어느 것이 산화할지 정해주기
+metal=['K','Ca','Na','Mg','Al','Zn','Fe','Ni','Sn','Pb','Cu','Hg','Ag','Pt','Au']
+m1=input()
+m2=input()
+a=0
+b=0
+for i in range(len(metal)) :
+    if metal[i] == m1 :
+        a = i
+        break
+for i in range(len(metal)) :
+    if metal[i] == m2:
+        b = i
+        break
+if b < a :
+    x = m1
+    m1 = m2
+    m2 = x
+# 결론적으로 m1의 이온화 경향이 더 크게 해줌
+print(m1+' + '+m2+'+'+' -> '+m2+' + '+m1+'+') # m1이 산화하는 반응
