@@ -1,0 +1,5 @@
+# m1,m2 입력받고 m1이 산화되는 반응 만들기
+metal=['K','Ca','Na','Mg','Al','Zn','Fe','Ni','Sn','Pb','Cu','Hg','Ag','Pt','Au']
+m1=input()
+m2=input()
+print(m1+' + '+m2+'+'+' -> '+m2+' + '+m1+'+')
