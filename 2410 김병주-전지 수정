@@ -1,0 +1,39 @@
+# 금속 이온이 2가 3가 일때도 적용시켜주기
+def gcd(a, b):
+    while (b != 0):
+        temp = a % b
+        a = b
+        b = temp
+    return abs(a)
+metal=['Li','K','Ca','Na','Mg','Al','Zn','Fe','Ni','Sn','Pb','H','Cu','Ag','Pt','Au'] # Hg는 분자형이온으로 존재해서 우선 제외시킴.
+metalnum=[1,2,1,2,3,2,2,2,2,2,2,1,2,3]  # 금속별로 이온의 전하량을 나타냄
+metalE=[-3.04,-2.925,-2.84,-2.714,-2.356,-1.676,-0.7626,-0.44,-0.257,-0.1375,-0.1263,0.00,0.34,0.7991,1.188,1.52]
+# 금속들의 반쪽전지의 표준환원 전위
+print('반응할 두 원소를 ['Li','K','Ca','Na','Mg','Al','Zn','Fe','Ni','Sn','Pb','H','Cu','Ag','Pt','Au']중에 선택해주세요.')
+m1=input()
+m2=input()
+a=-1
+b=-1
+for i in range(len(metal)) :
+    if metal[i] == m1 :
+        a = i
+        break
+
+for i in range(len(metal)) :
+    if metal[i] == m2:
+        b = i
+        break
+
+if b < a :
+    c = a
+    a = b
+    b = c
+    m1 = metal[a]
+    m2 = metal[b]  #index를 자유롭게 활용하기 위해 m1 m2 자체를 바꾸지 않고 그 index를 바꿔줌
+
+g=gcd(metalnum[b],metalnum[a])
+x=int(metalnum[b]/g)
+y= int(metalnum[a]/g)
+
+print(str(x)+m1+' + '+str(y)+m2+str(metalnum[b])+'+'+' -> '+str(y)+m2+' + '+str(x)+m1+str(metalnum[a])+'+')
+print('표준상태에서 전지의 전위는'+str(metalE[b]-metalE[a])+'이네요')
