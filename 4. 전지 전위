@@ -35,4 +35,9 @@ x=int(metalnum[b]/g)
 y= int(metalnum[a]/g)
 
 print(str(x)+m1+' + '+str(y)+m2+str(metalnum[b])+'+'+' -> '+str(y)+m2+' + '+str(x)+m1+str(metalnum[a])+'+')
-print('표준상태에서 전지의 전위는'+str(metalE[b]-metalE[a])+'이네요')
+voltage=metalE[b]-metalE[a]
+if voltage <0 :
+    print('전지로 활용할 수 없겠군요... 다른 금속이온을 사용해주세요')
+else :
+    print('표준상태에서 전지의 전위는'+str(metalE[b]-metalE[a])+'이네요')
+
